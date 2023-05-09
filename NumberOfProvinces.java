@@ -12,6 +12,10 @@ package graphs;
  *  4. Keep repeating these steps, for every node that you find unvisited, and visit the entire province. 
  *  5. Add a counter variable to count the number of times the BFS function is called, as in this way we can count the total number of 
  *     starting nodes, which will give us the number of provinces.
+ *     
+ *     Time Complexity:  O(N) + O(V+2E), Where O(N) is for outer loop and inner loop runs in total a single BFS over entire graph, 
+ *     and we know BFS takes a time of O(V+2E).
+ *     Space Complexity: O(N) + O(N),Space for recursion stack space and visited array. 
  */
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -40,9 +44,25 @@ public static void traverse(int V, List<List<Integer>> adj,boolean[] vis,Integer
 	}
 
 	public static int numOfProv(int V,List<List<Integer>> adj) {
+			//Given adjacency matrix. Now create adjacency list from that matrix
+			List<List<Integer>> adjList = new ArrayList<>();
+			for(int i=0;i<V;i++) {
+				adjList.add(new ArrayList<>());
+			}
+			for(int i=0;i<V;i++) {
+			
+				for(int j=0;j<V;j++) {
+					if(i!=j && adj.get(i).get(j)==1) {
+						adjList.get(i).add(j);
+						adjList.get(j).add(i);
+					}
+				}
+			}
+			
 			int count =0;
 			boolean vis[] = new boolean[V];
 			for(int i=0;i<V;i++) {
+			
 				if(vis[i]== false) {
 					count++;
 					traverse(V,adj,vis,i);
@@ -67,5 +87,6 @@ public static void traverse(int V, List<List<Integer>> adj,boolean[] vis,Integer
         adj.get(2).add(1, 0);
         adj.get(2).add(2, 1);
         System.out.println(numOfProv(3,adj));
+
 	}
 }
