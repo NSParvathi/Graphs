@@ -6,30 +6,14 @@ import java.util.Queue;
 /**
  * Problem Statement: Given a binary grid of N*M. Find the distance of the nearest 1 in the grid for each cell.
  *
- * The distance is calculated as |i1  – i2| + |j1 – j2|, where i1, j1 are the row number and column number of the current cell,
+ * The distance is calculated as |i1  â€“ i2| + |j1 â€“ j2|, where i1, j1 are the row number and column number of the current cell,
  * and i2, j2 are the row number and column number of the nearest cell having value 1.
  * 
  * 
- * Approach : method - brute force
- * 
- *  Use BFS Traversal find the adjacent cell in 4 directions of the current cell .
- *  Take visited matrix and answer matrix
- *  visited matrix - To track visited cells
- *  answer matrix - To store the answer and return it. Never ever change original given matrix as data is more important.
- * 
- *  1. Start from the first cell iterate all the cells of the given matrix.
- *  2. If the cell contains 1 then store 0 in the answer matrix for that corresponding cell.
- *  3. If the cell has 0 then use BFS traversal to find nearest cell which has 1 and then calculate the distance using the formula
- *     |i1  – i2| + |j1 – j2| and store the result in answer matrix.
- *  4. Repeat above 2 steps untill all cells marked in the visited array.  
- *  
- *  Time Complexity : For each cell atmost we are iterating through entire array. so T.C is O(n^4).
- *    
- *  Method 2 - Optimal approach
- *  
+ * Approach :  
  *  Instead checking for each cell follow below steps
- *  1. Take a queue data structure, a  visited matrix, and an answer matrix.
- *  2. Traverse the entire array and get the cells that contain 1 and store them in the queue, and store 0 in the corresponding cells of the answer matrix. 
+ *  1. Take a queue data structure, aÂ  visited matrix, and an answer matrix.
+ *  2. Traverse the entire array and get the cells that contain 1 and store them in the queue, and store 0 in the corresponding cells of theÂ answer matrix. 
  *  3. Take the counter variable and increment it when we add new adjacent cells to the queue. Replace the cell that contains 0 with the counter.
  *  4. Repeat the above steps until all the cells are marked as visited. 
  *  Time Complexity: O(NxM + NxMx4) ~ O(N x M)
