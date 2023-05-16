@@ -21,15 +21,15 @@ import java.util.Queue;
  *  
  *  1. For BFS traversal to start and visit all the nodes connected to it, we need a start node and a visited array. 
  *     Create a corresponding visited array, which will be an NxM matrix. 
- *  2. We will be looping through the NxM cell, and for every unvisited node in the visited matrix, we will call the BFS for it,
+ * 	2. We will be looping through the NxM cell, and for every unvisited node in the visited matrix, we will call the BFS for it,
  *     so that the BFS now expands and marks all the cells attached to it as visited. 
  *  3. Increment the counter variable at the start of each BFS call for the unvisited node, which is the number of islands.
  *  4. BFS function call will run through all the unvisited neighbouring land cells in the eight directions. 
- *  5. At the start of the BFS, we mark the node as visited, and then we check for adjacent nodes. If they are unvisited and contain one
+ *	5. At the start of the BFS, we mark the node as visited, and then we check for adjacent nodes. If they are unvisited and contain one
        means land, then we add them to the queue, mark them as visited, and loop until the queue is empty, meaning all the adjacent nodes whose value is 1 are visited.
  *
  * 	Time Complexity: O(N x M x log(N x M)) + O(NxMx8) ~ O(N x M), For the worst case, assuming all the pieces as land,
- *  the DFS function will be called for (N x M) nodes, and for every node, we are traversing for 4 neighbors, it will take O(N x M x 4) time.
+ *  the DFS function will be called for (N x M) nodes, and for every node, we are traversing for 8 neighbors, it will take O(N x M x 8) time.
  *  Set at max will store the complete grid, so it takes log(N x M) time.
  *
  *  Space Complexity ~ O(N x M), O(N x M) for the visited array and set takes up N x M locations at max. 
