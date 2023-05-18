@@ -20,15 +20,16 @@ import java.util.LinkedList;
  * 
  * The algorithm steps are as follows:
  * 
- * 1. We must traverse all components of the graph. 2. Make sure to carry a
- * visited array(all elements are initialized to 0) and a stack data structure,
- * where we are going to store the nodes after completing the DFS call. In the
- * DFS call, first, the current node is marked as visited. Then DFS call is made
- * for all its adjacent nodes. After visiting all its adjacent nodes, DFS will
- * backtrack to the previous node and meanwhile, the current node is pushed into
- * the stack. Finally, we will get the stack containing one of the topological
- * sortings of the graph. 3. The reason behind using the Stack is that stack
- * follows LIFO order. We are using DFS to traverse and get Topological sorting.
+ * 1. We must traverse all components of the graph. 
+ * 2. Make sure to carry a visited array(all elements are initialized to 0) and
+ * a stack data structure,where we are going to store the nodes after completing
+ * the DFS call. In the DFS call, first, the current node is marked as visited.
+ * Then DFS call is made for all its adjacent nodes. After visiting all its adjacent 
+ * nodes, DFS will backtrack to the previous node and meanwhile, the current node 
+ * is pushed into the stack. Finally, we will get the stack containing one of the 
+ * topological sortings of the graph. 
+ * 3. The reason behind using the Stack is that stack follows LIFO order. 
+ * We are using DFS to traverse and get Topological sorting.
  * In DFS we go into the depth until no more nodes to travel and then traverse
  * back. While back tracting we are adding to the stack so that nodes which
  * needs to be completed first will be at the top of the stack and later
