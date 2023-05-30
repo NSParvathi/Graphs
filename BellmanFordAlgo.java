@@ -9,12 +9,12 @@ import java.util.List;
  * 
  * Problem Statement:
  * Given a weighted, directed and connected graph of V vertices and E edges, Find the shortest distance of all the vertex's from the source vertex S.
-Note: If the Graph contains a negative cycle then return an array consisting of only -1.
+   Note: If the Graph contains a negative cycle then return an array consisting of only -1.
 
     Solution:
     
     Below are the steps to be followed
-    1. Create a distance array and intilize the source node to 0 and remaining all to max value which is 1e8
+        1. Create a distance array and intilize the source node to 0 and remaining all to max value which is 1e8
 	2. Then we will run a loop for V-1 times.
 	3. Inside that loop, relax the every given edge.
 	4. For example, one of the given edge information is like (u, v, wt), 
@@ -24,7 +24,7 @@ Note: If the Graph contains a negative cycle then return an array consisting of 
 	5. Repeat the 4th step for N-1 times, we will apply the same step one more time to check if the negative cycle exists. 
 	   If we found further relaxation is possible, we will conclude the graph has a negative cycle and from this step,
 	   we will return a distance array of -1(i.e. minimization of distances is not possible).
-    6. Otherwise, we will return the distance array which contains all the minimized distances.
+        6. Otherwise, we will return the distance array which contains all the minimized distances.
  */
 public class BellmanFordAlgo {
 
